@@ -1,0 +1,131 @@
+root{
+    --color_padrao: black;
+    --color-pre-prenchida: yellow;
+    --color-prenchida: green;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  background-color: #0466f8;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+h1 {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+#container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#despachante h2,
+p {
+  margin: 10px;
+}
+
+#despachante,
+#bopm-pre-preenchido {
+  width: 40%;
+  padding: 10px;
+  border: 1px dashed black;
+  margin: 1rem;
+}
+#dados-solicitante {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  /* gap: 5px; */
+}
+#dados-solicitante label {
+  margin: 15px 0px 2px 0px;
+}
+/* barra para ajudar a entender o fluxo */
+.separador-de-tela {
+  height: auto;
+  width: 0.1%;
+  background-color: rgb(69, 4, 250);
+  margin: 10px;
+}
+.boneco {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 5px;
+  width: 60px;
+  height: 60px;
+  /* background-color: transparent; */
+  /* border: 1px solid black; */
+  border-radius: 5%;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  left: 20px;
+}
+.bonecoCorpo {
+  width: 13px;
+  height: 13px;
+  background-color: tomato;
+  border-radius: 50% 50%;
+}
+.bonecoCabeca {
+  width: 25px;
+  height: 15px;
+  background-color: tomato;
+  border-radius: 50% 50% 0% 0%;
+  transform: rotate(0deg);
+}
+#status {
+  display: grid;
+  border: 1px solid black;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5%;
+  left: 80%;
+  justify-content: center;
+  align-content: center;
+}
+#status p {
+  /* width: 100%; */
+  font-size: 0.5rem;
+  /* color: yellow; */
+}
+#bopm {
+  padding: 10px;
+  width: 100%;
+}
+#bopm h2 {
+  margin: 10px;
+}
+#bopm table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#bopm table,
+th,
+td {
+  border: 1px solid black;
+}
+#bopm th,
+td {
+  padding: 5px;
+  text-align: left;
+}
+#bopm th {
+  background-color: #0466f8;
+  color: white;
+}

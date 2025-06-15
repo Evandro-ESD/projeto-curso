@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto CADSPM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Projeto CADSPM</h1>
+    </header>
+    <main id="container">
+        <section id="despachante">
+            <h2>Despachante</h2>
+            <p>O despachante é responsável por coletar os documentos necessários para o processo de licenciamento e
+                encaminhá-los ao órgão competente.</p>
+            <div id="dados-solicitante">
+
+                <label for=""> Nome solicitante:</label>
+                <input type="text" placeholder="nome do solicitante...">
+
+                <label for=""> Endereço:</label>
+                <input type="text" placeholder="Local da ocorrência...">
+
+                <label for=""> Contato solicitante:</label>
+                <input type="tel" placeholder="(xx) x xxxx-xxxx">
+
+                <label for="">Histórico:</label>
+                <textarea name="" id="" rows="10" placeholder="Solicitante informa que no local..."></textarea>
+
+            </div>
+        </section>
+
+        <!-- seção para separar tela de despacho da tela de prévia do projeto propstos -->
+        <div class="separador-de-tela"></div>
+
+        <!-- Seção para mostrar previa do projeto -->
+        <section id="bopm-pre-preenchido">
+            <h2>
+                <p>Como o Policial receberia os dados...</p>
+            </h2>
+            <div id="envolvidos">
+                <div class="boneco">
+                    <div id="status">
+                        <p>✓</p>
+                    </div>
+                    <div class="bonecoCorpo"></div>
+                    <div class="bonecoCabeca"></div>
+                </div>
+                <p>Envolvidos</p>
+            </div>
+
+            <table id="bopm">
+                <thead>
+                    <th>Nome:</th>
+                    <th>Endereço:</th>
+                    <th>Contato:</th>
+                </thead>
+                <tbody id="dadosRecebidos">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <h6 style="display: flex; color: burlywood;">Aqui seram inseridos os dados do solicitante em seu
+                    respactivo campo no BOPM OnLine</h6>
+            </div>
+
+        </section>
+    </main>
+
+
+    <div id="teste">
+        <input id="textInput" type="text">
+        <button id="btnTeste" name="teste" onclick="testando()">click aqui</button>
+    </div>
+
+
+    <script>
+        const tabelaBopm = document.querySelector('#dadosRecebidos')
+        const corChecked = document.querySelector('#status')
+
+        function prePreenchido() {
+            corChecked.style.border = '1px solid yellow'
+            corChecked.querySelectorAll('*').forEach(el => {
+                el.style.color = 'yellow'
+            })
+        }
+
+        document.getElementById('btnTeste')
+
+        // testando para preencher a primeira celula da 1ª linha
+        function testando() {
+            const text = document.getElementById('textInput').value
+            const primeiraCelula = tabelaBopm.rows[0].cells[0]
+            primeiraCelula.textContent = text
+
+            
+            let algumValorPreenchido = false
+            
+            for (const linha of tabelaBopm.rows) {
+                for (const celula of linha.cells) {
+                    if (celula.textContent.trim() !== '') {
+                        algumValorPreenchido = true
+                        prePreenchido()
+                        break
+                    }
+                }
+                if (algumValorPreenchido) break
+            }        
+            alert(`funciona: ${primeiraCelula.textContent}`)
+        }
+
+        // teste apenas no console
+        // if (algumValorPreenchido) {
+        //     console.log('Existe pelomeno um campopreenchido')
+        // } else
+        //     console.log('Existe pelomeno um campopreenchido')
+
+
+
+    </script>
+</body>
+
+</html>
